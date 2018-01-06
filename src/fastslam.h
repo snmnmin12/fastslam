@@ -41,10 +41,19 @@ public:
   */
   void ProcessMeasurement(const Record& record);
 
+  /**
+  * Run the measurement model for each particle
+  **/
   void Measurement_model(const Particle& p, const RadarReading& z, Eigen::Vector2d& h, Eigen::MatrixXd& H);
 
+ /**
+ * Run the resampling according to the weights for each particle
+ **/
   void Resample();
 
+  /**
+  * Get Best Particle and its pose and landmark estimation
+  **/
   void getBestPoseAndLandmark(VectorXd& mu);
 
   //================================================
